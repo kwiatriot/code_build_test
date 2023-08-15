@@ -1,7 +1,7 @@
 version: 0.2
 env:
   shell: bash
-  secerts-manager:
+  secrets-manager:
     TF_VAR_aws_access_key: terraform_builder:aws_access_key
     TF_VAR_aws_secert_key: terraform_builder:aws_secert_key
     TF_TOKEN: terraform_builder:tf_token
