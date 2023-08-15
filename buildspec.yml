@@ -1,0 +1,20 @@
+version: 0.2
+env:
+  shell: bash
+  secerts-manager:
+    TF_VAR_aws_access_key: terraform_builder:aws_access_key
+    TF_VAR_aws_secert_key: terraform_builder:aws_secert_key
+    TF_TOKEN: terraform_builder:tf_token
+phases:
+  install:
+    commands:
+      - curl -s -qL -o terraform_install.zip https://releases.hashicorp.com/terraform/1.5.1/terraform_1.5.1_linux_amd64.zip
+      - unzip terraform_install.zip -d /usr/bin/
+      - chmod +x /usr/bin/terraform
+    finally:
+      - terraform --version
+  pre_build:
+    commands:
+  build:
+    commands:
+      - ./plan.sh
