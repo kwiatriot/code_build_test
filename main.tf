@@ -1,9 +1,7 @@
 # configured aws provider with proper credentials
 provider "aws" {
-  region                   = "us-east-2"
+  region  = "us-east-2"
 }
-
-
 
 # create default vpc if one does not exit
 resource "aws_default_vpc" "default_vpc" {
