@@ -24,7 +24,3 @@ WORKSPACE="code_build_test"
 terraform --version
 message "setting auto apply to ${AUTOAPPLY}
 terraform init
-terraform plan -input=false -out=code_build_test.plan
-
-if [[ $AUTOAPPLY == "true" ]]; then
-    terraform apply -input=false code_build_test.plan
