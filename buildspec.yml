@@ -11,11 +11,11 @@ phases:
       - curl -s -qL -o terraform_install.zip https://releases.hashicorp.com/terraform/1.5.1/terraform_1.5.1_linux_amd64.zip
       - unzip terraform_install.zip -d /usr/bin/
       - chmod +x /usr/bin/terraform
-      - chmod +x plan.sh
     finally:
       - terraform --version
   pre_build:
     commands:
+      - chmod +x plan.sh
   build:
     commands:
       - ./plan.sh
